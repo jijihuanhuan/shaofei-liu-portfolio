@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
-
 export default function Home() {
-  redirect("/zh");
+  return (
+    <main style={{minHeight:"100vh",display:"grid",placeItems:"center",padding:24,textAlign:"center"}}>
+      <meta httpEquiv="refresh" content="0; url=./zh/" />
+      <div>
+        <div className="seal" style={{margin:"0 auto 24px"}}>绍<br/>飞</div>
+        <p>正在进入刘绍飞的个人主页…</p>
+        <a className="btn ghost" href="./zh/">进入主页</a>
+      </div>
+    </main>
+  );
 }
