@@ -4,7 +4,7 @@ import { PrintButton } from "./PrintButton";
 const data = {
   zh: {
     kicker:"CURRICULUM VITAE", title:"在线简历", desc:"数字 IC 设计、体系结构仿真与 AI 软硬件协同方向。页面支持浏览器打印为 PDF。",
-    photo:"个人照片\n待添加", info:[["出生","2001年8月"],["所在地","河北石家庄"],["政治面貌","中共党员"],["电话","13646301702"],["微信","13102853505"]],
+    photoAlt:"刘绍飞", info:[["出生","2001年8月"],["所在地","河北石家庄"],["政治面貌","中共党员"],["电话","13646301702"],["微信","13102853505"]],
     edu:"教育背景", skills:"专业技能", projects:"项目经历", honors:"荣誉与社会经历",
     education:[
       ["2025.09 — 至今","中国科学院大学 · 计算技术研究所","电子信息专业硕士研究生 · GPA 3.38"],
@@ -25,7 +25,7 @@ const data = {
   },
   en: {
     kicker:"CURRICULUM VITAE", title:"Résumé", desc:"Digital IC design, architecture simulation, and AI hardware–software co-design. This page is optimized for browser-to-PDF printing.",
-    photo:"Portrait\nto be added", info:[["Born","August 2001"],["Location","Shijiazhuang, Hebei"],["Affiliation","CPC Member"],["Phone","+86 136 4630 1702"],["WeChat","13102853505"]],
+    photoAlt:"Shaofei Liu", info:[["Born","August 2001"],["Location","Shijiazhuang, Hebei"],["Affiliation","CPC Member"],["Phone","+86 136 4630 1702"],["WeChat","13102853505"]],
     edu:"Education", skills:"Technical Skills", projects:"Selected Projects", honors:"Honors & Leadership",
     education:[
       ["Sep 2025 — Present","Institute of Computing Technology, UCAS","M.Eng. in Electronic Information · GPA 3.38"],
@@ -49,7 +49,7 @@ const data = {
 export function ResumePage({ lang }: { lang: Lang }) {
   const c=data[lang];
   return <SiteShell lang={lang} active="resume"><PageHero kicker={c.kicker} title={c.title} description={c.desc}/><div className="page-body resume-grid">
-    <aside className="profile-card"><div className="photo-placeholder">{c.photo.split("\n").map(x=><span key={x}>{x}<br/></span>)}</div><div className="contact-list">{c.info.map(([a,b])=><div key={a}><strong>{a}</strong>{b}</div>)}</div><PrintButton label={lang==="zh"?"浏览器打印 / PDF":"Print / Save PDF"}/></aside>
+    <aside className="profile-card"><div className="photo-frame"><img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/portrait.jpg`} alt={c.photoAlt}/></div><div className="contact-list">{c.info.map(([a,b])=><div key={a}><strong>{a}</strong>{b}</div>)}</div><PrintButton label={lang==="zh"?"浏览器打印 / PDF":"Print / Save PDF"}/></aside>
     <div className="resume-main">
       <section><h2>{c.edu}</h2>{c.education.map(([date,title,desc])=><div className="entry" key={title}><div className="date">{date}</div><div><h3>{title}</h3><p>{desc}</p></div></div>)}</section>
       <section><h2>{c.skills}</h2>{c.skillGroups.map(([title,desc])=><div className="skill-block" key={title}><h3>{title}</h3><p>{desc}</p></div>)}</section>
