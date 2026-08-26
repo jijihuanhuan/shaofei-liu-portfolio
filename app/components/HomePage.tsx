@@ -44,15 +44,16 @@ export function HomePage({ lang }: { lang: Lang }) {
         <h1>{name}</h1>
         <p className="home-sub">{sub}</p>
       </header>
+      <hr className="leovan" />
       <div className="year-list">
         {entries.map(([year, rows]) => (
           <section key={year}>
             <h2 className="year">{year}</h2>
             {rows.map(([kind, title, href]) => (
-              <Link className="entry-row" href={href} key={`${year}-${title}`}>
-                <span className="entry-kind">{kind}</span>
-                <span className="entry-title">{title}</span>
-              </Link>
+              <p className="entry-row" key={`${year}-${title}`}>
+                <span className="entry-kind">{kind}</span>{" "}
+                <Link className="entry-title" href={href}>{title}</Link>
+              </p>
             ))}
           </section>
         ))}

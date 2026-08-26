@@ -75,66 +75,64 @@ export function SiteShell({
     lang === "zh" ? "学会独处，连接世界" : "Learn to be alone, connect to the world";
   const avatar = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/portrait.jpg`;
 
-  const nav = (extraClass: string, activeClass: string) =>
-    keys.map((key) => (
-      <Link
-        key={key}
-        className={`${extraClass}${active === key ? ` ${activeClass}` : ""}`}
-        href={`/${lang}${paths[key]}`}
-      >
-        {labels[key]}
-      </Link>
-    ));
+  const links = keys.map((key) => ({
+    key,
+    label: labels[key],
+    href: `/${lang}${paths[key]}`,
+  }));
 
   return (
     <div className="shell">
-      <aside className="sidebar">
-        <div className="side-brand">
+      <div className="shell-inner">
+        <aside className="sidebar">
           <div className="side-avatar">
             <img src={avatar} alt={name} />
           </div>
           <div className="side-name">{name}</div>
           <div className="side-slogan">{slogan}</div>
-        </div>
-        <nav className="side-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
-          {nav("", "active")}
-        </nav>
-        <div className="side-foot">
-          <div>© 2026 {name}</div>
-          {isCore && (
-            <Link className="side-lang" href={`/${other}${paths[active]}`}>
-              {lang === "zh" ? "EN" : "中文"}
-            </Link>
-          )}
-        </div>
-      </aside>
-
-      <header className="topbar">
-        <div className="topbar-head">
-          <div className="topbar-avatar">
-            <img src={avatar} alt={name} />
+          <ul className="side-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
+            {links.map((l) => (
+              <li key={l.key}>
+                <Link className={active === l.key ? "active" : ""} href={l.href}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="side-foot">
+            <div>© 2026 {name}</div>
+            {isCore && (
+              <Link className="side-lang" href={`/${other}${paths[active]}`}>
+                {lang === "zh" ? "EN" : "中文"}
+              </Link>
+            )}
           </div>
-          <div>
-            <div className="topbar-name">{name}</div>
-            <div className="topbar-slogan">{slogan}</div>
-          </div>
-        </div>
-        <nav className="topbar-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
-          {nav("", "active")}
-          {isCore && (
-            <Link className="topbar-lang" href={`/${other}${paths[active]}`}>
-              {lang === "zh" ? "EN" : "中文"}
-            </Link>
-          )}
-        </nav>
-      </header>
+        </aside>
 
-      <main className="main">
-        <div className="content">{children}</div>
-        <footer className="footer">
-          <div>© 2026 {name} · {lang === "zh" ? "河北石家庄 · 北京" : "Shijiazhuang · Beijing"}</div>
-        </footer>
-      </main>
+        <header className="topbar">
+          <nav className="topbar-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
+            {links.map((l) => (
+              <Link key={l.key} className={active === l.key ? "active" : ""} href={l.href}>
+                {l.label}
+              </Link>
+            ))}
+            {isCore && (
+              <Link className="topbar-lang" href={`/${other}${paths[active]}`}>
+                {lang === "zh" ? "EN" : "中文"}
+              </Link>
+            )}
+          </nav>
+        </header>
+
+        <div className="content">
+          {children}
+          <footer className="footer">
+            <div>
+              © 2026 {name} · {lang === "zh" ? "河北石家庄 · 北京" : "Shijiazhuang · Beijing"}
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
   );
 }
@@ -149,10 +147,13 @@ export function PageHero({
   description: string;
 }) {
   return (
-    <header className="page-hero">
-      <div className="page-kicker">{kicker}</div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-    </header>
+    <>
+      <header className="page-hero">
+        <div className="page-kicker">{kicker}</div>
+        <h1>{title}</h1>
+        {description && <p>{description}</p>}
+      </header>
+      <hr className="leovan" />
+    </>
   );
 }
