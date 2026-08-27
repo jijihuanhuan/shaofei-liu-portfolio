@@ -53,7 +53,7 @@ const paths: Record<PageKey, string> = {
 };
 
 const coreKeys: PageKey[] = ["home", "resume", "research", "projects"];
-const lifeKeys: PageKey[] = ["motorcycle", "photography", "cooking", "annual", "about", "friends"];
+const lifeKeys: PageKey[] = ["motorcycle", "photography", "cooking", "friends", "annual", "about"];
 const zhKeys: PageKey[] = [...coreKeys, ...lifeKeys];
 const enKeys: PageKey[] = coreKeys;
 
