@@ -74,7 +74,7 @@ export function SiteShell({
   const name = lang === "zh" ? "刘绍飞" : "Shaofei Liu";
   const slogan =
     lang === "zh" ? "学会独处，连接世界" : "Learn to be alone, connect to the world";
-  const avatar = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/portrait.jpg`;
+  const avatar = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/avatar.svg`;
 
   const linkFor = (key: PageKey) => ({
     key,
