@@ -3,11 +3,7 @@ import { PageHero, SiteShell } from "./SiteShell";
 export function AnnualPage() {
   return (
     <SiteShell lang="zh" active="annual">
-      <PageHero
-        kicker="ANNUAL REVIEW"
-        title="年度总结"
-        description="以年为单位，记录走过的路与沉淀下来的东西。"
-      />
+      <PageHero title="年度总结" />
       <div className="page-body">
         <section className="annual-block">
           <h2>2023 年回顾</h2>

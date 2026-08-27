@@ -33,16 +33,11 @@ const enEntries: YearGroup[] = [
 export function HomePage({ lang }: { lang: Lang }) {
   const entries = lang === "zh" ? zhEntries : enEntries;
   const name = lang === "zh" ? "刘绍飞" : "Shaofei Liu";
-  const sub =
-    lang === "zh"
-      ? "数字 IC 设计 · AI 软硬件协同 · 体系结构"
-      : "Digital IC design · AI hardware–software co-design · Architecture";
 
   return (
     <SiteShell lang={lang} active="home">
       <header className="home-head">
         <h1>{name}</h1>
-        <p className="home-sub">{sub}</p>
       </header>
       <hr className="leovan" />
       <div className="year-list">
@@ -52,7 +47,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             {rows.map(([kind, title, href]) => (
               <p className="entry-row" key={`${year}-${title}`}>
                 <span className="entry-kind">{kind}</span>{" "}
-                <Link className="entry-title" href={href}>{title}</Link>
+                <Link href={href}>{title}</Link>
               </p>
             ))}
           </section>

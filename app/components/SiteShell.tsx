@@ -53,7 +53,8 @@ const paths: Record<PageKey, string> = {
 };
 
 const coreKeys: PageKey[] = ["home", "resume", "research", "projects"];
-const zhKeys: PageKey[] = [...coreKeys, "motorcycle", "photography", "cooking", "annual", "about", "friends"];
+const lifeKeys: PageKey[] = ["motorcycle", "photography", "cooking", "annual", "about", "friends"];
+const zhKeys: PageKey[] = [...coreKeys, ...lifeKeys];
 const enKeys: PageKey[] = coreKeys;
 
 export function SiteShell({
@@ -75,83 +76,93 @@ export function SiteShell({
     lang === "zh" ? "学会独处，连接世界" : "Learn to be alone, connect to the world";
   const avatar = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/portrait.jpg`;
 
-  const links = keys.map((key) => ({
+  const linkFor = (key: PageKey) => ({
     key,
     label: labels[key],
     href: `/${lang}${paths[key]}`,
-  }));
+  });
+
+  const navItem = (key: PageKey) => {
+    const l = linkFor(key);
+    return (
+      <li key={l.key}>
+        <Link className={active === l.key ? "active" : ""} href={l.href}>
+          {l.label}
+        </Link>
+      </li>
+    );
+  };
+
+  const core = coreKeys.filter((k) => keys.includes(k));
+  const life = lifeKeys.filter((k) => keys.includes(k));
 
   return (
     <div className="shell">
-      <div className="shell-inner">
-        <aside className="sidebar">
-          <div className="side-avatar">
-            <img src={avatar} alt={name} />
-          </div>
-          <div className="side-name">{name}</div>
-          <div className="side-slogan">{slogan}</div>
-          <ul className="side-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
-            {links.map((l) => (
-              <li key={l.key}>
-                <Link className={active === l.key ? "active" : ""} href={l.href}>
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="side-foot">
-            <div>© 2026 {name}</div>
-            {isCore && (
-              <Link className="side-lang" href={`/${other}${paths[active]}`}>
-                {lang === "zh" ? "EN" : "中文"}
-              </Link>
-            )}
-          </div>
-        </aside>
+      <aside className="sidebar">
+        <div className="side-avatar">
+          <img src={avatar} alt={name} />
+        </div>
+        <div className="side-slogan">
+          <p>{slogan}</p>
+        </div>
+        <ul className="side-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
+          {core.map(navItem)}
+          {life.length > 0 && <li className="block" key="sep1"><span>&nbsp;</span></li>}
+          {life.map(navItem)}
+        </ul>
+        <div className="side-foot">
+          <div>© 2026 {name}</div>
+          {isCore && (
+            <Link className="side-lang" href={`/${other}${paths[active]}`}>
+              {lang === "zh" ? "EN" : "中文"}
+            </Link>
+          )}
+        </div>
+      </aside>
 
-        <header className="topbar">
-          <nav className="topbar-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
-            {links.map((l) => (
+      <header className="topbar">
+        <nav className="topbar-nav" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
+          {core.map((k) => {
+            const l = linkFor(k);
+            return (
               <Link key={l.key} className={active === l.key ? "active" : ""} href={l.href}>
                 {l.label}
               </Link>
-            ))}
-            {isCore && (
-              <Link className="topbar-lang" href={`/${other}${paths[active]}`}>
-                {lang === "zh" ? "EN" : "中文"}
+            );
+          })}
+          {life.map((k) => {
+            const l = linkFor(k);
+            return (
+              <Link key={l.key} className={active === l.key ? "active" : ""} href={l.href}>
+                {l.label}
               </Link>
-            )}
-          </nav>
-        </header>
+            );
+          })}
+          {isCore && (
+            <Link className="topbar-lang" href={`/${other}${paths[active]}`}>
+              {lang === "zh" ? "EN" : "中文"}
+            </Link>
+          )}
+        </nav>
+      </header>
 
-        <div className="content">
-          {children}
-          <footer className="footer">
-            <div>
-              © 2026 {name} · {lang === "zh" ? "河北石家庄 · 北京" : "Shijiazhuang · Beijing"}
-            </div>
-          </footer>
-        </div>
+      <div className="content">
+        {children}
+        <footer className="footer">
+          <div>
+            © 2026 {name} · {lang === "zh" ? "河北石家庄 · 北京" : "Shijiazhuang · Beijing"}
+          </div>
+        </footer>
       </div>
     </div>
   );
 }
 
-export function PageHero({
-  kicker,
-  title,
-  description,
-}: {
-  kicker: string;
-  title: string;
-  description: string;
-}) {
+export function PageHero({ title }: { title: string }) {
   return (
     <>
       <header className="page-hero">
-        <div className="page-kicker">{kicker}</div>
         <h1>{title}</h1>
-        {description && <p>{description}</p>}
       </header>
       <hr className="leovan" />
     </>
