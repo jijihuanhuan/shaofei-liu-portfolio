@@ -4,6 +4,7 @@ const data = {
   zh: {
     title: "在线简历",
     name: "刘绍飞",
+    photoAlt: "刘绍飞",
     basic: "基本信息",
     info: [
       ["出生", "2001年8月"],
@@ -43,6 +44,7 @@ const data = {
   en: {
     title: "Résumé",
     name: "Shaofei Liu",
+    photoAlt: "Shaofei Liu",
     basic: "Basic Information",
     info: [
       ["Born", "August 2001"],
@@ -89,13 +91,18 @@ export function ResumePage({ lang }: { lang: Lang }) {
       <h2>{c.name}</h2>
 
       <h2>{c.basic}</h2>
-      <ul>
-        {c.info.map(([a, b]) => (
-          <li key={a}>
-            {a}：{b}
-          </li>
-        ))}
-      </ul>
+      <div className="basic-wrap">
+        <ul className="basic-list">
+          {c.info.map(([a, b]) => (
+            <li key={a}>
+              {a}：{b}
+            </li>
+          ))}
+        </ul>
+        <div className="basic-photo">
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/portrait.jpg`} alt={c.photoAlt} />
+        </div>
+      </div>
 
       <h2>{c.edu}</h2>
       <ul>

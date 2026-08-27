@@ -133,6 +133,11 @@ hr.leovan {
 .content ul { padding-left: 1em; list-style: disc; margin: 0; }
 .content li { margin: 4px 0; }
 .content a { text-decoration: underline; text-underline-offset: 4px; }
+
+.basic-wrap { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; }
+.basic-list { flex: 1; min-width: 0; }
+.basic-photo { flex: 0 0 auto; width: 132px; }
+.basic-photo img { width: 100%; display: block; border: 1px solid var(--border-soft); }
 .content h2.year { font-size: 32px; }
 
 
@@ -193,6 +198,8 @@ hr.leovan {
 
   .content { padding: 0 20px 40px; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
+  .basic-wrap { gap: 16px; }
+  .basic-photo { width: 104px; }
 }
 
 @media print {
