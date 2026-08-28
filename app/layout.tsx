@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "刘绍飞 | 数字 IC 设计与 AI 软硬件协同",
+    default: "积极bao的赛博世界",
     template: "%s | 刘绍飞",
   },
   description:
-    "刘绍飞的个人主页，聚焦数字 IC 设计、AI 软硬件协同、体系结构仿真与生成式模型压缩。",
+    "从容优雅的去生活、学习、工作和娱乐。",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

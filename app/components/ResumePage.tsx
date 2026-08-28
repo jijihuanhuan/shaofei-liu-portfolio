@@ -20,7 +20,7 @@ const data = {
     ],
     skills: "专业技能",
     skillGroups: [
-      ["硬件描述与验证", "熟练使用 Verilog，熟悉 VHDL，可完成 RTL 建模与 Testbench 编写；具备 SystemVerilog 随机约束与覆盖率驱动验证实践，了解 UVM 方法学。"],
+      ["硬件描述与验证", "熟悉Verilog，熟悉 VHDL，可完成 RTL 建模与 Testbench 编写；具备 SystemVerilog 随机约束与覆盖率驱动验证实践，了解 UVM 方法学。"],
       ["数字芯片设计基础", "掌握同步/异步电路、时钟与复位、状态机、FIFO、流水线、仲裁逻辑、寄存器及存储器接口设计。"],
       ["EDA 工具链", "熟悉 Synopsys / Cadence 工具体系，具备 Design Compiler 综合与 SDC 约束经验，了解 PrimeTime 时序分析及形式验证。"],
       ["体系结构与仿真", "熟练使用 gem5、CACTI 进行架构级建模，具备 DRAM / 3D NAND 存储系统建模经验；使用 Python、C++ 与 CUDA C++。"],
@@ -28,11 +28,12 @@ const data = {
     ],
     projects: "项目经历",
     projectItems: [
-      ["硬件设计空间探索与 PPA 预测框架", "针对异构加速器设计周期较长的问题，构建从 C/C++ 源码到硬件性能、功耗和面积指标的快速评估流程。", "gem5 · CACTI · C/C++ · Python · LLM Fine-tuning"],
-      ["数字电路设计与 FPGA 验证", "实现多时钟域异步 FIFO，完成逻辑综合、SDC 约束优化、随机约束验证，并在 Xilinx FPGA 上进行时序收敛与硬件调试。", "Verilog · SystemVerilog · Design Compiler · Xilinx FPGA"],
+      ["硬件设计空间探索DSE与 PPA 预测框架", "针对异构加速器设计周期较长的问题，构建从 C/C++ 源码到硬件性能、功耗和面积指标的快速评估流程。", "gem5 · CACTI · C/C++ · Python · LLM Fine-tuning"],
+      ["扩撒模型推理加速", "使用硬件编解码器对扩散模型的权重进行压缩，并对特征图生成过程中的冗余信息进行复用和跳步计算，减少计算量和访存量", "Verilog · SystemVerilog · Design Compiler · Xilinx FPGA"],
     ],
     honors: "荣誉与社会经历",
     honorItems: [
+      "中国科学院大学三好学生",
       "山东大学优秀毕业生",
       "山东大学优秀学生干部",
       "山东大学机电与信息工程学院优秀科研助理",
@@ -60,7 +61,7 @@ const data = {
     ],
     skills: "Technical Skills",
     skillGroups: [
-      ["HDL & Verification", "Proficient in Verilog and familiar with VHDL; RTL modeling and testbench development; hands-on experience with SystemVerilog constrained-random and coverage-driven verification; familiar with UVM concepts."],
+      ["HDL & Verification", "Familiar with Verilog and VHDL; RTL modeling and testbench development; hands-on experience with SystemVerilog constrained-random and coverage-driven verification; familiar with UVM concepts."],
       ["Digital Design", "Synchronous/asynchronous circuits, clock and reset design, FSMs, FIFOs, pipelines, arbitration, register interfaces, and memory interfaces."],
       ["EDA Toolchain", "Synopsys/Cadence flows; hands-on logic synthesis and SDC constraint work with Design Compiler; familiar with PrimeTime timing analysis and formal verification."],
       ["Architecture & Simulation", "gem5 and CACTI modeling; DRAM and 3D NAND system experience; Python, C++, and CUDA C++."],
@@ -68,15 +69,16 @@ const data = {
     ],
     projects: "Selected Projects",
     projectItems: [
-      ["ML-driven DSE and PPA Prediction", "Built a rapid evaluation pipeline that maps C/C++ source code to performance, power, and area estimates for heterogeneous accelerator design exploration.", "gem5 · CACTI · C/C++ · Python · LLM Fine-tuning"],
-      ["Digital Circuit Design & FPGA Verification", "Implemented a multi-clock asynchronous FIFO; performed synthesis, SDC optimization, constrained-random verification, FPGA timing closure, and hardware debugging.", "Verilog · SystemVerilog · Design Compiler · Xilinx FPGA"],
+      ["Hardware Design Space Exploration (DSE) and PPA Prediction", "Built a rapid evaluation pipeline that maps C/C++ source code to performance, power, and area estimates for heterogeneous accelerator design exploration.", "gem5 · CACTI · C/C++ · Python · LLM Fine-tuning"],
+      ["Diffusion Model Inference Acceleration", "Used hardware codecs to compress diffusion-model weights, and reused redundant information during feature-map generation with skip computation to reduce compute and memory traffic.", "Verilog · SystemVerilog · Design Compiler · Xilinx FPGA"],
     ],
     honors: "Honors & Leadership",
     honorItems: [
+      "Merit Student, University of Chinese Academy of Sciences",
       "Outstanding Graduate, Shandong University",
       "Outstanding Student Leader, Shandong University",
       "Outstanding Research Assistant, School of Mechanical, Electrical & Information Engineering",
-      "Captain of the university track and field team and president of its athletics association",
+      "Captain of the university track and field team and president of its athletics association; represented the university in municipal and provincial competitions",
       "Member, Weihai Triathlon Association",
       "Publicity Director, Shandong University Youth Lecture Center",
     ],
