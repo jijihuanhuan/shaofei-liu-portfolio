@@ -6,13 +6,6 @@ type YearGroup = [year: string, rows: HomeEntry[]];
 
 const zhEntries: YearGroup[] = [
   ["2025", [
-    ["研究", "面向生成式模型的 VVC 张量压缩与计算旁路", "/zh/research"],
-    ["项目", "硬件设计空间探索与 PPA 预测框架", "/zh/projects"],
-  ]],
-  ["2024", [
-    ["项目", "数字电路设计与 FPGA 验证", "/zh/projects"],
-  ]],
-  ["2025", [
     ["年度总结", "2025 年回顾", "/zh/annual"],
   ]],
   ["2024", [
