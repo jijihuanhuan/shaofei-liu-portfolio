@@ -17,13 +17,10 @@ const data = {
   en: {
     title: "Research",
     intro:
-      "I study how redundancy in AI computation can be discovered, encoded, and converted into real system-level gains. My work spans model operators, compression, architecture simulation, and CUDA C++ integration.",
+      "I study how redundancy in AI computation can be discovered, encoded, and converted into real system-level gains.",
     directions: "Core Directions",
     directionItems: [
-      "AI Hardware–Software Co-Design: explore the joint design space of model characteristics, operator behavior, accelerators, and edge-computing constraints.",
-      "Generative Models × Video Coding: investigate H.266/VVC compression of intermediate features in diffusion, Transformer, and video-generation models.",
-      "Architecture Modeling & PPA: build multi-level performance, power, and area evaluation pipelines using gem5, CACTI, and synthesis flows.",
-      "System Integration & Optimization: turn algorithmic prototypes into runnable systems with CUDA C++, profiling, and co-designed pipelines.",
+      "Generative Models × Video Coding: explore H.266/VVC compression of intermediate features in diffusion, Transformer, and video-generation models.",
     ],
     current: "Current Project",
     currentTitle: "H.266/VVC Tensor Compression and Compute Bypass for Generative Models",

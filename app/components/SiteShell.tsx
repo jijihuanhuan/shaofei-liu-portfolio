@@ -34,7 +34,7 @@ const enLabels: Record<PageKey, string> = {
   motorcycle: "",
   photography: "",
   cooking: "",
-  annual: "",
+  annual: "Annual Review",
   about: "",
   friends: "",
 };
@@ -55,7 +55,8 @@ const paths: Record<PageKey, string> = {
 const coreKeys: PageKey[] = ["home", "resume", "research", "projects"];
 const lifeKeys: PageKey[] = ["motorcycle", "photography", "cooking", "friends", "annual", "about"];
 const zhKeys: PageKey[] = [...coreKeys, ...lifeKeys];
-const enKeys: PageKey[] = coreKeys;
+const switchKeys: PageKey[] = [...coreKeys, "annual"];
+const enKeys: PageKey[] = [...coreKeys, "annual"];
 
 export function SiteShell({
   lang,
@@ -69,7 +70,7 @@ export function SiteShell({
   const labels = lang === "zh" ? zhLabels : enLabels;
   const keys = lang === "zh" ? zhKeys : enKeys;
   const other = lang === "zh" ? "en" : "zh";
-  const isCore = coreKeys.includes(active);
+  const hasSwitch = switchKeys.includes(active);
 
   const name = lang === "zh" ? "刘绍飞" : "Shaofei Liu";
   const slogan =
@@ -112,7 +113,7 @@ export function SiteShell({
         </ul>
         <div className="side-foot">
           <div>© 2026 {name}</div>
-          {isCore && (
+          {hasSwitch && (
             <Link className="side-lang" href={`/${other}${paths[active]}`}>
               {lang === "zh" ? "EN" : "中文"}
             </Link>
@@ -138,7 +139,7 @@ export function SiteShell({
               </Link>
             );
           })}
-          {isCore && (
+          {hasSwitch && (
             <Link className="topbar-lang" href={`/${other}${paths[active]}`}>
               {lang === "zh" ? "EN" : "中文"}
             </Link>

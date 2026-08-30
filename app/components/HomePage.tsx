@@ -21,11 +21,16 @@ const zhEntries: YearGroup[] = [
 
 const enEntries: YearGroup[] = [
   ["2025", [
-    ["Research", "VVC Tensor Compression & Compute Bypass for Generative Models", "/en/research"],
-    ["Project", "ML-driven DSE and PPA Prediction", "/en/projects"],
+    ["Annual Review", "2025 Review", "/en/annual"],
   ]],
   ["2024", [
-    ["Project", "Digital Circuit Design & FPGA Verification", "/en/projects"],
+    ["Annual Review", "2024 Review", "/en/annual"],
+  ]],
+  ["2023", [
+    ["Annual Review", "2023 Review", "/en/annual"],
+  ]],
+  ["2022", [
+    ["Annual Review", "2022 Review", "/en/annual"],
   ]],
 ];
 

@@ -1,4 +1,4 @@
 import { AnnualPage } from "../../components/AnnualPage";
 export default function Page() {
-  return <AnnualPage lang="zh" />;
+  return <AnnualPage lang="en" />;
 }
