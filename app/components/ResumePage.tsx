@@ -20,11 +20,11 @@ const data = {
     ],
     skills: "专业技能",
     skillGroups: [
-      ["硬件描述与验证", "熟悉Verilog，熟悉 VHDL，可完成 RTL 建模与 Testbench 编写；具备 SystemVerilog 随机约束与覆盖率驱动验证实践，了解 UVM 方法学。"],
-      ["数字芯片设计基础", "掌握同步/异步电路、时钟与复位、状态机、FIFO、流水线、仲裁逻辑、寄存器及存储器接口设计。"],
-      ["EDA 工具链", "熟悉 Synopsys / Cadence 工具体系，具备 Design Compiler 综合与 SDC 约束经验，了解 PrimeTime 时序分析及形式验证。"],
-      ["体系结构与仿真", "熟练使用 gem5、CACTI 进行架构级建模，具备 DRAM / 3D NAND 存储系统建模经验；使用 Python、C++ 与 CUDA C++。"],
-      ["系统与自动化", "熟练使用 Linux 开发环境，可通过 Makefile、Shell 与 Python 脚本实现 EDA 流程自动化。"],
+      ["扩散模型与生成式推理", "熟悉 Diffusion / Stable Diffusion 的推理流程，掌握 DDPM、DDIM 等采样方法与采样步数优化，理解 Classifier-Free Guidance 及 UNet / DiT 主干的推理计算开销；关注 Sora 类视频生成模型的时空冗余。"],
+      ["生成式模型压缩与加速", "探索利用 H.266 / VVC 视频编码消除扩散模型中间特征图的时空冗余，开展张量压缩、编解码参数调优与计算旁路（Bypass）设计，降低推理计算量与访存。"],
+      ["算子级改写与 CUDA C++ 优化", "使用 CUDA C++ 进行算子级改写与系统集成，结合 Profiling 定位推理瓶颈与特征图冗余，设计软硬件协同的推理 Pipeline。"],
+      ["体系结构建模与 PPA 评估", "熟练使用 gem5、CACTI 进行架构级建模，评估端侧 / 边缘推理场景的性能、功耗与面积（PPA）；了解脉动阵列、FPGA 划分与端侧 LLM Scaling Laws。"],
+      ["系统与自动化", "熟练使用 Linux 开发环境，可通过 Makefile、Shell 与 Python 脚本实现模型压缩与推理实验流程的自动化。"],
     ],
     projects: "项目经历",
     projectItems: [
@@ -61,11 +61,11 @@ const data = {
     ],
     skills: "Technical Skills",
     skillGroups: [
-      ["HDL & Verification", "Familiar with Verilog and VHDL; RTL modeling and testbench development; hands-on experience with SystemVerilog constrained-random and coverage-driven verification; familiar with UVM concepts."],
-      ["Digital Design", "Synchronous/asynchronous circuits, clock and reset design, FSMs, FIFOs, pipelines, arbitration, register interfaces, and memory interfaces."],
-      ["EDA Toolchain", "Synopsys/Cadence flows; hands-on logic synthesis and SDC constraint work with Design Compiler; familiar with PrimeTime timing analysis and formal verification."],
-      ["Architecture & Simulation", "gem5 and CACTI modeling; DRAM and 3D NAND system experience; Python, C++, and CUDA C++."],
-      ["Systems & Automation", "Linux development, Makefile, Shell, and Python scripting for EDA workflow automation."],
+      ["Diffusion Models & Generative Inference", "Familiar with diffusion and Stable Diffusion inference, including DDPM / DDIM samplers, step reduction, classifier-free guidance, and the compute profile of UNet / DiT backbones; attentive to spatiotemporal redundancy in Sora-style video generative models."],
+      ["Generative Model Compression & Acceleration", "Exploring H.266/VVC-based compression of intermediate features to remove spatiotemporal redundancy in diffusion models, including tensor compression, codec-parameter tuning, and compute-bypass design to reduce inference compute and memory traffic."],
+      ["Operator Rewriting & CUDA C++ Optimization", "Hands-on CUDA C++ for operator-level rewriting and system integration; uses profiling to locate inference bottlenecks and feature-map redundancy and to build hardware–software co-designed pipelines."],
+      ["Architecture Modeling & PPA", "Proficient with gem5 and CACTI for architecture-level modeling and PPA evaluation in edge/on-device inference; familiar with systolic arrays, FPGA partitioning, and on-device LLM scaling laws."],
+      ["Systems & Automation", "Linux development; Makefile, Shell, and Python scripting to automate model-compression and inference experiment workflows."],
     ],
     projects: "Selected Projects",
     projectItems: [
